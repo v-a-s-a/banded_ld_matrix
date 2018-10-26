@@ -21,7 +21,7 @@ X = (X - means) / sds
 
 np.ma.fix_invalid(X, fill_value = 0.0, copy=False)
 
-R = (X @ X.T) * (1/X.shape[0])
+R = np.matmul(X, X.T) * (1/X.shape[0])
 
 np.save('test_R', np.asarray(R))
 
